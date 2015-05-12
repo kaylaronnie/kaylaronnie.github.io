@@ -1,4 +1,7 @@
-name: Hank Quinlan, Horrible Cop
+#http://jekyllrb.com/docs/home/
+#https://github.com/jekyll/jekyll/wiki/Sites
+
+name: Kayla Trevino
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
 #Reference: http://jekyllrb.com/docs/pagination/

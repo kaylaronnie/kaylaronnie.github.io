@@ -1,0 +1,50 @@
+---
+layout: default
+title: Learning Stuff
+---
+	<h1>{{ page.title }}</h1>
+
+  <p>Your time: <span id="yourTime"></span></p>
+  <div id="box"></div>
+
+
+<style type="text/css">
+  #box { width:200px; height:200px; background-color:red; display:none; }
+</style>
+
+<script type="text/javascript">
+  function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.round(Math.random() * 15)]
+    }
+  }
+
+  var clickedTime;
+  var createdTime;
+  var reactionTime;
+
+  function makeBox() {
+    var time = Math.random();
+    time = time * 5000;
+    setTimeout(function() {
+      box.style.display="block";
+      createdTime = Date.now();
+    }, time);
+  }
+
+  var box = document.getElementById("box");
+  box.onclick = function() {
+    clickedTime = Date.now();
+    reactionTime = (clickedTime - createdTime) / 1000;
+    document.getElementById("yourTime").innerHTML = reactionTime;
+    this.style.display="none";
+    makeBox();
+  }
+
+  makeBox();
+  
+  
+
+</script>
